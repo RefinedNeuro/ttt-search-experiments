@@ -1,0 +1,57 @@
+from collections import Counter
+from itertools import groupby, accumulate, chain
+from functools import reduce
+import operator
+
+
+def most_common(lst):
+    if not lst:
+        return None
+    c = Counter(lst)
+    return c.most_common(1)[0][0]
+
+
+def group_by_first_char(words):
+    result = {}
+    for key, group in groupby(sorted(words), key=lambda w: w[0]):
+        result[key] = list(group)
+    return result
+
+
+def prefix_sums(numbers):
+    return list(accumulate(numbers))
+
+
+def product(numbers):
+    if not numbers:
+        return 1
+    return reduce(operator.mul, numbers, 1)
+
+
+def interleave(*iterables):
+    return list(chain(*zip(*iterables)))
+
+
+def top_k(lst, k):
+    return sorted(lst, reverse=True)[:k]
+
+
+def unique_counts(lst):
+    return dict(Counter(lst))
+
+
+def sliding_window_max(lst, w):
+    from collections import deque
+    if not lst or w <= 0:
+        return []
+    dq = deque()
+    result = []
+    for i, val in enumerate(lst):
+        while dq and lst[dq[-1]] <= val:
+            dq.pop()
+        dq.append(i)
+        if dq[0] == i - w:
+            dq.popleft()
+        if i >= w - 1:
+            result.append(lst[dq[0]])
+    return result

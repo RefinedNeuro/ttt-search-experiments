@@ -1,0 +1,50 @@
+TTT-Search POC v1.2 — Auto-Analysis
+==================================================
+
+v1.1 results: results/v11_full/detailed.json
+v1.2 results: results/v12_full/detailed.json
+
+Per-condition pass rates:
+  base_greedy                           54/164  (32.9%)
+  base_temp_lowT  (seedA, T=0.3)        70/164  (42.7%)
+  base_temp_lowT_seedB (T=0.3)          65/164  (39.6%)
+  base_temp_highT (seedA, T=0.8)        74/164  (45.1%)
+  base_temp_highT_seedB (T=0.8)         70/164  (42.7%)
+  ttt_lowT  (gen T=0.3)                 71/164  (43.3%)
+  ttt_highT (gen T=0.8)                 76/164  (46.3%)
+
+==================================================
+Q1: Noise floor vs TTT-induced divergence
+==================================================
+
+Symmetric differences:
+  D_ttt_lowT   = sym_diff(ttt_lowT,  base_temp_lowT)        = 17
+  D_noise_lowT = sym_diff(base_temp_lowT, base_temp_lowT_seedB) = 15
+  D_ttt_highT  = sym_diff(ttt_highT, base_temp_highT)       = 34
+  D_noise_highT= sym_diff(base_temp_highT, base_temp_highT_seedB) = 36
+
+Q1 verdict @ T=0.3 (PRIMARY): priming is noise
+  rule: |D_ttt=17 - D_noise=15| <= 5
+Q1 verdict @ T=0.8 (secondary): priming is noise
+  rule: |D_ttt=34 - D_noise=36| <= 5
+
+==================================================
+Q2: Compute-matched (n=8) ensemble combinations
+==================================================
+
+  pure_lowT_n8        = lowT_seedA UNION lowT_seedB      = 75/164  (45.7%)
+  pure_highT_n8       = highT_seedA UNION highT_seedB    = 90/164  (54.9%)
+  mixed_temp_n8       = lowT_seedA UNION highT_seedA     = 84/164  (51.2%)
+  mixed_ttt_temp_n8   = ttt_lowT  UNION highT_seedA      = 87/164  (53.0%)
+  mixed_ttt_only_n8   = ttt_lowT  UNION ttt_highT        = 85/164  (51.8%)
+
+Best pure = max(pure_lowT_n8, pure_highT_n8) = 90
+Q2 (mixed vs best pure): ambiguous
+  rule: mixed_temp_n8=84, best_pure=90 (between bands)
+  delta(mixed_ttt_temp - mixed_temp) = +3
+
+==================================================
+Final verdict
+==================================================
+
+VERDICT: Whole direction dead. Just sample more.

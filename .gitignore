@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.ipynb_checkpoints/
+
+# Unsloth/Triton compiled kernel cache — regenerated on every run
+unsloth_compiled_cache/
+
+# Live run logs are diagnostic only; results/*.json is the source of truth
+results/*.log

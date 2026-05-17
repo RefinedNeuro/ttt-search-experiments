@@ -1,0 +1,86 @@
+Sampling-Dynamics Sweep — Auto-Analysis
+============================================================
+
+Inputs combined: results/v11_full/detailed.json, results/v12_full/detailed.json, results/sweep/detailed.json
+Temperatures   : [0.3, 0.5, 0.8, 1.0, 1.2]
+N values       : [1, 2, 4, 8, 12, 16]
+
+Candidates per problem by temperature (min across problems):
+    T=0.3: 164 problems, candidates per problem min=16 max=16
+    T=0.5: 164 problems, candidates per problem min=16 max=16
+    T=0.8: 164 problems, candidates per problem min=16 max=16
+    T=1.0: 164 problems, candidates per problem min=16 max=16
+    T=1.2: 164 problems, candidates per problem min=16 max=16
+
+------------------------------------------------------------
+Pass@N (empirical, first-N candidates)
+------------------------------------------------------------
+     N       T=0.3       T=0.5       T=0.8       T=1.0       T=1.2
+     1   52/164 (31.7%)   48/164 (29.3%)   43/164 (26.2%)   32/164 (19.5%)   32/164 (19.5%)
+     2   63/164 (38.4%)   61/164 (37.2%)   55/164 (33.5%)   45/164 (27.4%)   42/164 (25.6%)
+     4   70/164 (42.7%)   73/164 (44.5%)   74/164 (45.1%)   59/164 (36.0%)   50/164 (30.5%)
+     8   75/164 (45.7%)   85/164 (51.8%)   90/164 (54.9%)   80/164 (48.8%)   68/164 (41.5%)
+    12   81/164 (49.4%)   94/164 (57.3%)  100/164 (61.0%)   90/164 (54.9%)   78/164 (47.6%)
+    16   85/164 (51.8%)   98/164 (59.8%)  108/164 (65.9%)   98/164 (59.8%)   80/164 (48.8%)
+
+------------------------------------------------------------
+Pass@N (HumanEval-paper unbiased estimator)
+------------------------------------------------------------
+     N       T=0.3       T=0.5       T=0.8       T=1.0       T=1.2
+     1       30.3%       29.4%       26.1%       22.2%       18.4%
+     2       36.4%       37.6%       35.0%       29.8%       24.9%
+     4       41.9%       45.7%       44.9%       38.9%       32.8%
+     8       47.2%       53.4%       55.2%       48.8%       41.2%
+    12       50.0%       57.3%       61.5%       55.2%       45.9%
+    16       51.8%       59.8%       65.9%       59.8%       48.8%
+
+------------------------------------------------------------
+Compile-failure rate per temperature
+------------------------------------------------------------
+    T=0.3:  3.32% (OK)
+    T=0.5:  2.40% (OK)
+    T=0.8:  3.51% (OK)
+    T=1.0:  4.80% (OK)
+    T=1.2: 11.13% (GARBAGE)
+
+------------------------------------------------------------
+Within-pool diversity (mean pairwise normalized Levenshtein, n_cap=16)
+------------------------------------------------------------
+    T=0.3: 0.183
+    T=0.5: 0.226
+    T=0.8: 0.298
+    T=1.0: 0.346
+    T=1.2: 0.453
+
+------------------------------------------------------------
+Saturation analysis (delta = pass@N - pass@N/2)
+------------------------------------------------------------
+    T=0.3:   pass@2-pass@1=+11  pass@4-pass@2=+7  pass@8-pass@4=+5  pass@16-pass@8=+10
+    T=0.5:   pass@2-pass@1=+13  pass@4-pass@2=+12  pass@8-pass@4=+12  pass@16-pass@8=+13
+    T=0.8:   pass@2-pass@1=+12  pass@4-pass@2=+19  pass@8-pass@4=+16  pass@16-pass@8=+18
+    T=1.0:   pass@2-pass@1=+13  pass@4-pass@2=+14  pass@8-pass@4=+21  pass@16-pass@8=+18
+    T=1.2:   pass@2-pass@1=+10  pass@4-pass@2=+8  pass@8-pass@4=+18  pass@16-pass@8=+12
+
+------------------------------------------------------------
+Compute-optimal (N, T) per budget (best pass@N with N <= budget)
+------------------------------------------------------------
+    Budget 4: (N=4, T=0.8) -> 74/164 (45.1%)
+    Budget 8: (N=8, T=0.8) -> 90/164 (54.9%)
+    Budget 16: (N=16, T=0.8) -> 108/164 (65.9%)
+
+============================================================
+Final answers
+============================================================
+
+Q1 (Temperature peak at N=16): T=0.8, pass 108/164 (65.9%)
+Q2 (Plateau per T):
+    T=0.3 plateaus at N=no plateau in range (pass@16 - pass@8 >= 1)
+    T=0.5 plateaus at N=no plateau in range (pass@16 - pass@8 >= 1)
+    T=0.8 plateaus at N=no plateau in range (pass@16 - pass@8 >= 1)
+    T=1.0 plateaus at N=no plateau in range (pass@16 - pass@8 >= 1)
+    T=1.2 plateaus at N=no plateau in range (pass@16 - pass@8 >= 1)
+Q3 (Highest safe temperature, compile rate <=5%): T=1.0 (rate=4.8%)
+Q4 (Compute-optimal):
+    Budget 4: (N=4, T=0.8) -> 74/164 (45.1%)
+    Budget 8: (N=8, T=0.8) -> 90/164 (54.9%)
+    Budget 16: (N=16, T=0.8) -> 108/164 (65.9%)

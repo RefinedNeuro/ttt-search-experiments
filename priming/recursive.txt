@@ -1,0 +1,58 @@
+def factorial(n):
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+
+
+def fibonacci(n):
+    if n <= 0:
+        return 0
+    if n == 1:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+def sum_digits(n):
+    if n < 10:
+        return n
+    return n % 10 + sum_digits(n // 10)
+
+
+def power(base, exp):
+    if exp == 0:
+        return 1
+    if exp % 2 == 0:
+        half = power(base, exp // 2)
+        return half * half
+    return base * power(base, exp - 1)
+
+
+def depth(nested_list):
+    if not isinstance(nested_list, list):
+        return 0
+    if not nested_list:
+        return 1
+    return 1 + max(depth(item) for item in nested_list)
+
+
+def flatten_recursive(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten_recursive(item))
+        else:
+            result.append(item)
+    return result
+
+
+def binary_search(arr, target, lo=0, hi=None):
+    if hi is None:
+        hi = len(arr) - 1
+    if lo > hi:
+        return -1
+    mid = (lo + hi) // 2
+    if arr[mid] == target:
+        return mid
+    if arr[mid] < target:
+        return binary_search(arr, target, mid + 1, hi)
+    return binary_search(arr, target, lo, mid - 1)

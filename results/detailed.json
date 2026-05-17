@@ -1,0 +1,422 @@
+[
+  {
+    "task_id": "HumanEval/0",
+    "condition": "base_greedy",
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"/tmp/tmpdkn45sqw.py\", line 42, in <module>\n    check(has_close_elements)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpdkn45sqw.py\", line 33, in check\n    assert candidate([1.0, 2.0, 3.9, 4.0, 5.0, 2.2], 0.05) == False\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+    "candidate_preview": "from typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, "
+  },
+  {
+    "task_id": "HumanEval/1",
+    "condition": "base_greedy",
+    "passed": false,
+    "error": "SyntaxError: unterminated string literal (detected at line 67) (<string>, line 67)",
+    "candidate_preview": "from typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balan"
+  },
+  {
+    "task_id": "HumanEval/2",
+    "condition": "base_greedy",
+    "passed": false,
+    "error": "SyntaxError: invalid syntax (<string>, line 11)",
+    "candidate_preview": "def truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate"
+  },
+  {
+    "task_id": "HumanEval/3",
+    "condition": "base_greedy",
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"/tmp/tmpwyay1otc.py\", line 38, in <module>\n    check(below_zero)\n    ~~~~~^^^^^^^^^^^^\n  File \"/tmp/tmpwyay1otc.py\", line 31, in check\n    assert candidate([1, 2, -3, 1, 2, -3]) == False\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+    "candidate_preview": "from typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and\n    at that point functi"
+  },
+  {
+    "task_id": "HumanEval/4",
+    "condition": "base_greedy",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "from typing import List\n\n\ndef mean_absolute_deviation(numbers: List[float]) -> float:\n    \"\"\" For a given list of input numbers, calculate Mean Absolute Deviation\n    around the mean of this dataset.\n    Mean Absolute Deviation is the average absolute difference between each\n    element and a center"
+  },
+  {
+    "task_id": "HumanEval/5",
+    "condition": "base_greedy",
+    "passed": false,
+    "error": "SyntaxError: invalid character '\u2192' (U+2192) (<string>, line 23)",
+    "candidate_preview": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers`\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not nu"
+  },
+  {
+    "task_id": "HumanEval/6",
+    "condition": "base_greedy",
+    "passed": false,
+    "error": "SyntaxError: unterminated string literal (detected at line 27) (<string>, line 27)",
+    "candidate_preview": "from typing import List\n\n\ndef parse_nested_parens(paren_string: str) -> List[int]:\n    \"\"\" Input to this function is a string represented multiple groups for nested parentheses separated by spaces.\n    For each of the group, output the deepest level of nesting of parentheses.\n    E.g. (()()) has max"
+  },
+  {
+    "task_id": "HumanEval/7",
+    "condition": "base_greedy",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "from typing import List\n\n\ndef filter_by_substring(strings: List[str], substring: str) -> List[str]:\n    \"\"\" Filter an input list of strings only for ones that contain given substring\n    >>> filter_by_substring([], 'a')\n    []\n    >>> filter_by_substring(['abc', 'bacd', 'cde', 'array'], 'a')\n    ['a"
+  },
+  {
+    "task_id": "HumanEval/8",
+    "condition": "base_greedy",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "from typing import List, Tuple\n\n\ndef sum_product(numbers: List[int]) -> Tuple[int, int]:\n    \"\"\" For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.\n    Empty sum should be equal to 0 and empty product should be equal to 1.\n    >>> sum_produc"
+  },
+  {
+    "task_id": "HumanEval/9",
+    "condition": "base_greedy",
+    "passed": false,
+    "error": "SyntaxError: invalid syntax (<string>, line 23)",
+    "candidate_preview": "from typing import List, Tuple\n\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling maximum element found until given moment\n    in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\n    if not n"
+  },
+  {
+    "task_id": "HumanEval/10",
+    "condition": "base_greedy",
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"/tmp/tmppb7xjyiw.py\", line 91, in <module>\n    check(make_palindrome)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmppb7xjyiw.py\", line 85, in check\n    assert candidate('x') == 'x'\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+    "candidate_preview": "def is_palindrome(string: str) -> bool:\n    \"\"\" Test if given string is a palindrome \"\"\"\n    return string == string[::-1]\n\n\ndef make_palindrome(string: str) -> str:\n    \"\"\" Find the shortest palindrome that begins with a supplied string.\n    Algorithm idea is simple:\n    - Find the longest postfix "
+  },
+  {
+    "task_id": "HumanEval/11",
+    "condition": "base_greedy",
+    "passed": false,
+    "error": "SyntaxError: unterminated string literal (detected at line 15) (<string>, line 15)",
+    "candidate_preview": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    return a + b\n```\n\nWait, the example o"
+  },
+  {
+    "task_id": "HumanEval/12",
+    "condition": "base_greedy",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "from typing import List, Optional\n\n\ndef longest(strings: List[str]) -> Optional[str]:\n    \"\"\" Out of list of strings, return the longest one. Return the first one in case of multiple\n    strings of the same length. Return None in case the input list is empty.\n    >>> longest([])\n    None\n    >>> lon"
+  },
+  {
+    "task_id": "HumanEval/13",
+    "condition": "base_greedy",
+    "passed": false,
+    "error": "SyntaxError: invalid syntax (<string>, line 9)",
+    "candidate_preview": "def greatest_common_divisor(a: int, b: int) -> int:\n    \"\"\" Return a greatest common divisor of two integers a and b\n    >>> greatest_common_divisor(3, 5)\n    1\n    >>> greatest_common_divisor(25, 15)\n    5\n    \"\"\"\n    return abs(a) * abs(b) // abs(a + b)\n```\n\nNote: The function above computes the g"
+  },
+  {
+    "task_id": "HumanEval/14",
+    "condition": "base_greedy",
+    "passed": false,
+    "error": "SyntaxError: unterminated string literal (detected at line 12) (<string>, line 12)",
+    "candidate_preview": "from typing import List\n\n\ndef all_prefixes(string: str) -> List[str]:\n    \"\"\" Return list of all prefixes from shortest to longest of the input string\n    >>> all_prefixes('abc')\n    ['a', 'ab', 'abc']\n    \"\"\"\n    return [s for s in string if s]\n```\n\nWait, that's not correct. Let me fix it properly."
+  },
+  {
+    "task_id": "HumanEval/15",
+    "condition": "base_greedy",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "def string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return \" \".join([str(i) for i in range(0, n + 1)])"
+  },
+  {
+    "task_id": "HumanEval/16",
+    "condition": "base_greedy",
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"/tmp/tmp5cbf1vrd.py\", line 26, in <module>\n    check(count_distinct_characters)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp5cbf1vrd.py\", line 21, in check\n    assert candidate('abcde' + 'cade' + 'CADE') == 5\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+    "candidate_preview": "def count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of\n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\n    return len(set(string))"
+  },
+  {
+    "task_id": "HumanEval/17",
+    "condition": "base_greedy",
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"/tmp/tmpw8z5pos4.py\", line 43, in <module>\n    check(parse_music)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmpw8z5pos4.py\", line 38, in check\n    assert candidate('.| .| .| .|') == [1, 1, 1, 1]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+    "candidate_preview": "from typing import List\n\n\ndef parse_music(music_string: str) -> List[int]:\n    \"\"\" Input to this function is a string representing musical notes in a special ASCII format.\n    Your task is to parse this string and return list of integers corresponding to how many beats does each\n    not last.\n\n    H"
+  },
+  {
+    "task_id": "HumanEval/18",
+    "condition": "base_greedy",
+    "passed": false,
+    "error": "SyntaxError: unterminated triple-quoted string literal (detected at line 68) (<string>, line 68)",
+    "candidate_preview": "def how_many_times(string: str, substring: str) -> int:\n    \"\"\" Find how many times a given substring can be found in the original string. Count overlapping cases.\n    >>> how_many_times('', 'a')\n    0\n    >>> how_many_times('aaa', 'a')\n    3\n    >>> how_many_times('aaaa', 'aa')\n    3\n    \"\"\"\n    co"
+  },
+  {
+    "task_id": "HumanEval/19",
+    "condition": "base_greedy",
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"/tmp/tmpnirwgl3r.py\", line 39, in <module>\n    check(sort_numbers)\n    ~~~~~^^^^^^^^^^^^^^\n  File \"/tmp/tmpnirwgl3r.py\", line 33, in check\n    assert candidate('three') == 'three'\n           ~~~~~~~~~^^^^^^^^^\n  File \"/tmp/tmpnirwgl3r.py\", line 15, in sort_numbers\n    numbers_list = [int(num) for num in numbers.split()]\n                    ~~~^^^^^\nValueError: invalid literal for int() with base 10: 'three'",
+    "candidate_preview": "from typing import List\n\n\ndef sort_numbers(numbers: str) -> str:\n    \"\"\" Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    Return the string with numbers sorted from small"
+  },
+  {
+    "task_id": "HumanEval/0",
+    "condition": "base_temperature",
+    "passed": false,
+    "error": "SyntaxError: invalid character '\u2192' (U+2192) (<string>, line 62)",
+    "candidate_preview": "from typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, "
+  },
+  {
+    "task_id": "HumanEval/1",
+    "condition": "base_temperature",
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"/tmp/tmp6pxpwhpy.py\", line 57, in <module>\n    check(separate_paren_groups)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp6pxpwhpy.py\", line 45, in check\n    assert candidate('(()()) ((())) () ((())()())') == [\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        '(()())', '((()))', '()', '((())()())'\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ]\n    ^\nAssertionError",
+    "candidate_preview": "from typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balan"
+  },
+  {
+    "task_id": "HumanEval/2",
+    "condition": "base_temperature",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "def truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate"
+  },
+  {
+    "task_id": "HumanEval/3",
+    "condition": "base_temperature",
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"/tmp/tmphwn8yxwg.py\", line 38, in <module>\n    check(below_zero)\n    ~~~~~^^^^^^^^^^^^\n  File \"/tmp/tmphwn8yxwg.py\", line 31, in check\n    assert candidate([1, 2, -3, 1, 2, -3]) == False\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+    "candidate_preview": "from typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and\n    at that point functi"
+  },
+  {
+    "task_id": "HumanEval/4",
+    "condition": "base_temperature",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "from typing import List\n\n\ndef mean_absolute_deviation(numbers: List[float]) -> float:\n    \"\"\" For a given list of input numbers, calculate Mean Absolute Deviation\n    around the mean of this dataset.\n    MAD = average | x - x_mean |\n    >>> mean_absolute_deviation([1.0, 2.0, 3.0, 4.0])\n    1.0\n    \""
+  },
+  {
+    "task_id": "HumanEval/5",
+    "condition": "base_temperature",
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"/tmp/tmpmrbiplio.py\", line 27, in <module>\n    check(intersperse)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmpmrbiplio.py\", line 23, in check\n    assert candidate([5, 6, 3, 2], 8) == [5, 8, 6, 8, 3, 8, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+    "candidate_preview": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers`\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    return [d"
+  },
+  {
+    "task_id": "HumanEval/6",
+    "condition": "base_temperature",
+    "passed": false,
+    "error": "SyntaxError: unterminated string literal (detected at line 29) (<string>, line 29)",
+    "candidate_preview": "from typing import List\n\n\ndef parse_nested_parens(paren_string: str) -> List[int]:\n    \"\"\" Input to this function is a string represented multiple groups for nested parentheses separated by spaces.\n    For each of the group, output the deepest level of nesting of parentheses.\n    E.g. (()()) has max"
+  },
+  {
+    "task_id": "HumanEval/7",
+    "condition": "base_temperature",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "from typing import List\n\n\ndef filter_by_substring(strings: List[str], substring: str) -> List[str]:\n    \"\"\" Filter an input list of strings only for ones that contain given substring\n    >>> filter_by_substring([], 'a')\n    []\n    >>> filter_by_substring(['abc', 'bacd', 'cde', 'array'], 'a')\n    ['a"
+  },
+  {
+    "task_id": "HumanEval/8",
+    "condition": "base_temperature",
+    "passed": false,
+    "error": "SyntaxError: invalid syntax (<string>, line 23)",
+    "candidate_preview": "from typing import List, Tuple\n\n\ndef sum_product(numbers: List[int]) -> Tuple[int, int]:\n    \"\"\" For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.\n    Empty sum should be equal to 0 and empty product should be equal to 1.\n    >>> sum_produc"
+  },
+  {
+    "task_id": "HumanEval/9",
+    "condition": "base_temperature",
+    "passed": false,
+    "error": "SyntaxError: unterminated triple-quoted string literal (detected at line 59) (<string>, line 58)",
+    "candidate_preview": "from typing import List, Tuple\n\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling maximum element found until given moment in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\n    result = []\n"
+  },
+  {
+    "task_id": "HumanEval/10",
+    "condition": "base_temperature",
+    "passed": false,
+    "error": "SyntaxError: invalid syntax (<string>, line 51)",
+    "candidate_preview": "def is_palindrome(string: str) -> bool:\n    \"\"\" Test if given string is a palindrome \"\"\"\n    return string == string[::-1]\n\n\ndef make_palindrome(string: str) -> str:\n    \"\"\" Find the shortest palindrome that begins with a supplied string.\n    Algorithm idea is simple:\n    - Find the longest postfix "
+  },
+  {
+    "task_id": "HumanEval/11",
+    "condition": "base_temperature",
+    "passed": false,
+    "error": "SyntaxError: invalid character '\u2192' (U+2192) (<string>, line 22)",
+    "candidate_preview": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    def xor(a: str, b: str) -> str:\n     "
+  },
+  {
+    "task_id": "HumanEval/12",
+    "condition": "base_temperature",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "from typing import List, Optional\n\n\ndef longest(strings: List[str]) -> Optional[str]:\n    \"\"\"\n    Out of list of strings, return the longest one.\n    Return the first one in case of multiple strings of the same length.\n    Return None in case the input list is empty.\n    \"\"\"\n    if not strings:\n    "
+  },
+  {
+    "task_id": "HumanEval/13",
+    "condition": "base_temperature",
+    "passed": false,
+    "error": "SyntaxError: unterminated string literal (detected at line 37) (<string>, line 37)",
+    "candidate_preview": "def greatest_common_divisor(a: int, b: int) -> int:\n    \"\"\" Return a greatest common divisor of two integers a and b\n    >>> greatest_common_divisor(3, 5)\n    1\n    >>> greatest_common_divisor(25, 15)\n    5\n    \"\"\"\n    return abs(a) - abs(b) if a > b else abs(a) - abs(b)\n```\n\nWait, I think the expec"
+  },
+  {
+    "task_id": "HumanEval/14",
+    "condition": "base_temperature",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "from typing import List\n\n\ndef all_prefixes(string: str) -> List[str]:\n    \"\"\" Return list of all prefixes from shortest to longest of the input string\n    >>> all_prefixes('abc')\n    ['a', 'ab', 'abc']\n    \"\"\"\n    prefixes = []\n    length = len(string)\n\n    for i in range(length):\n        if length "
+  },
+  {
+    "task_id": "HumanEval/15",
+    "condition": "base_temperature",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "def string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return \" \".join(str(i) for i in range(0, n + 1))"
+  },
+  {
+    "task_id": "HumanEval/16",
+    "condition": "base_temperature",
+    "passed": false,
+    "error": "SyntaxError: invalid syntax (<string>, line 9)",
+    "candidate_preview": "def count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of\n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\n    return len(list(set(string)))\n```\n\nT"
+  },
+  {
+    "task_id": "HumanEval/17",
+    "condition": "base_temperature",
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"/tmp/tmpj91weif0.py\", line 47, in <module>\n    check(parse_music)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmpj91weif0.py\", line 42, in check\n    assert candidate('.| .| .| .|') == [1, 1, 1, 1]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+    "candidate_preview": "from typing import List\n\n\ndef parse_music(music_string: str) -> List[int]:\n    \"\"\" Input to this function is a string representing musical notes in a special ASCII format.\n    Your task is to parse this string and return list of integers corresponding to how many beats does each\n    not last.\n\n    H"
+  },
+  {
+    "task_id": "HumanEval/18",
+    "condition": "base_temperature",
+    "passed": false,
+    "error": "SyntaxError: invalid syntax (<string>, line 15)",
+    "candidate_preview": "def how_many_times(string: str, substring: str) -> int:\n    \"\"\" Find how many times a given substring can be found in the original string. Count overlaping cases.\n    >>> how_many_times('', 'a')\n    0\n    >>> how_many_times('aaa', 'a')\n    3\n    >>> how_many_times('aaaa', 'aa')\n    3\n    \"\"\"\n    cou"
+  },
+  {
+    "task_id": "HumanEval/19",
+    "condition": "base_temperature",
+    "passed": false,
+    "error": "SyntaxError: unterminated string literal (detected at line 48) (<string>, line 48)",
+    "candidate_preview": "from typing import List\n\n\ndef sort_numbers(numbers: str) -> str:\n    \"\"\" Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    Return the string with numbers sorted from small"
+  },
+  {
+    "task_id": "HumanEval/0",
+    "condition": "ttt_search",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "from typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, "
+  },
+  {
+    "task_id": "HumanEval/1",
+    "condition": "ttt_search",
+    "passed": false,
+    "error": "SyntaxError: unterminated string literal (detected at line 29) (<string>, line 29)",
+    "candidate_preview": "from typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balan"
+  },
+  {
+    "task_id": "HumanEval/2",
+    "condition": "ttt_search",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "def truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate"
+  },
+  {
+    "task_id": "HumanEval/3",
+    "condition": "ttt_search",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "from typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and\n    at that point functi"
+  },
+  {
+    "task_id": "HumanEval/4",
+    "condition": "ttt_search",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "from typing import List\n\n\ndef mean_absolute_deviation(numbers: List[float]) -> float:\n    \"\"\" For a given list of input numbers, calculate Mean Absolute Deviation\n    around the mean of this dataset.\n    MAD = average | x - x_mean |\n    >>> mean_absolute_deviation([1.0, 2.0, 3.0, 4.0])\n    1.0\n    \""
+  },
+  {
+    "task_id": "HumanEval/5",
+    "condition": "ttt_search",
+    "passed": false,
+    "error": "SyntaxError: invalid syntax (<string>, line 20)",
+    "candidate_preview": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers`\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not nu"
+  },
+  {
+    "task_id": "HumanEval/6",
+    "condition": "ttt_search",
+    "passed": false,
+    "error": "SyntaxError: unterminated triple-quoted string literal (detected at line 89) (<string>, line 87)",
+    "candidate_preview": "from typing import List\n\n\ndef parse_nested_parens(paren_string: str) -> List[int]:\n    \"\"\" Input to this function is a string represented multiple groups for nested parentheses separated by spaces.\n    For each of the group, output the deepest level of nesting of parentheses.\n    E.g. (()()) has max"
+  },
+  {
+    "task_id": "HumanEval/7",
+    "condition": "ttt_search",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "from typing import List\n\n\ndef filter_by_substring(strings: List[str], substring: str) -> List[str]:\n    \"\"\" Filter an input list of strings only for ones that contain given substring\n    >>> filter_by_substring([], 'a')\n    []\n    >>> filter_by_substring(['abc', 'bacd', 'cde', 'array'], 'a')\n    ['a"
+  },
+  {
+    "task_id": "HumanEval/8",
+    "condition": "ttt_search",
+    "passed": false,
+    "error": "SyntaxError: invalid syntax (<string>, line 23)",
+    "candidate_preview": "from typing import List, Tuple\n\n\ndef sum_product(numbers: List[int]) -> Tuple[int, int]:\n    \"\"\" For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.\n    Empty sum should be equal to 0 and empty product should be equal to 1.\n    >>> sum_produc"
+  },
+  {
+    "task_id": "HumanEval/9",
+    "condition": "ttt_search",
+    "passed": false,
+    "error": "SyntaxError: unterminated string literal (detected at line 21) (<string>, line 21)",
+    "candidate_preview": "from typing import List, Tuple\n\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling maximum element found until given moment in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\n    result = []\n"
+  },
+  {
+    "task_id": "HumanEval/10",
+    "condition": "ttt_search",
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"/tmp/tmp_lod06zt.py\", line 103, in <module>\n    check(make_palindrome)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp_lod06zt.py\", line 97, in check\n    assert candidate('x') == 'x'\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+    "candidate_preview": "def is_palindrome(string: str) -> bool:\n    \"\"\" Test if given string is a palindrome \"\"\"\n    return string == string[::-1]\n\n\ndef make_palindrome(string: str) -> str:\n    \"\"\" Find the shortest palindrome that begins with a supplied string.\n    Algorithm idea is simple:\n    - Find the longest postfix "
+  },
+  {
+    "task_id": "HumanEval/11",
+    "condition": "ttt_search",
+    "passed": false,
+    "error": "SyntaxError: unterminated string literal (detected at line 13) (<string>, line 13)",
+    "candidate_preview": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    return a + b\n```\n\nWait, that's not co"
+  },
+  {
+    "task_id": "HumanEval/12",
+    "condition": "ttt_search",
+    "passed": true,
+    "error": null,
+    "candidate_preview": "from typing import List, Optional\n\n\ndef longest(strings: List[str]) -> Optional[str]:\n    \"\"\" Out of list of strings, return the longest one. Return the first one in case of multiple\n    strings of the same length. Return None in case the input list is empty.\n    >>> longest([])\n    None\n    >>> lon"
+  },
+  {
+    "task_id": "HumanEval/13",
+    "condition": "ttt_search",
+    "passed": false,
+    "error": "SyntaxError: unterminated string literal (detected at line 11) (<string>, line 11)",
+    "candidate_preview": "def greatest_common_divisor(a: int, b: int) -> int:\n    \"\"\" Return a greatest common divisor of two integers a and b\n    >>> greatest_common_divisor(3, 5)\n    1\n    >>> greatest_common_divisor(25, 15)\n    5\n    \"\"\"\n    return abs(a) - abs(b) if a != b else 0\n```\n\nWait, that doesn't return the GCD. L"
+  },
+  {
+    "task_id": "HumanEval/14",
+    "condition": "ttt_search",
+    "passed": false,
+    "error": "SyntaxError: invalid syntax (<string>, line 10)",
+    "candidate_preview": "from typing import List\n\n\ndef all_prefixes(string: str) -> List[str]:\n    \"\"\" Return list of all prefixes from shortest to longest of the input string\n    >>> all_prefixes('abc')\n    ['a', 'ab', 'abc']\n    \"\"\"\n    return [s for s in string if s]\n```\n\nWait, that returns a list of all characters. Let "
+  },
+  {
+    "task_id": "HumanEval/15",
+    "condition": "ttt_search",
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"/tmp/tmpozi6i8yj.py\", line 24, in <module>\n    check(string_sequence)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpozi6i8yj.py\", line 20, in check\n    assert candidate(3) == '0 1 2 3'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+    "candidate_preview": "def string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return \" \".join([f\"0\" for _ in range(n + 1)])"
+  },
+  {
+    "task_id": "HumanEval/16",
+    "condition": "ttt_search",
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"/tmp/tmpjwwcxtyb.py\", line 26, in <module>\n    check(count_distinct_characters)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpjwwcxtyb.py\", line 21, in check\n    assert candidate('abcde' + 'cade' + 'CADE') == 5\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+    "candidate_preview": "def count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of\n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\n    return len(set(string))"
+  },
+  {
+    "task_id": "HumanEval/17",
+    "condition": "ttt_search",
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"/tmp/tmpsoxu_ig2.py\", line 43, in <module>\n    check(parse_music)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmpsoxu_ig2.py\", line 38, in check\n    assert candidate('.| .| .| .|') == [1, 1, 1, 1]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+    "candidate_preview": "from typing import List\n\n\ndef parse_music(music_string: str) -> List[int]:\n    \"\"\" Input to this function is a string representing musical notes in a special ASCII format.\n    Your task is to parse this string and return list of integers corresponding to how many beats does each\n    not last.\n\n    H"
+  },
+  {
+    "task_id": "HumanEval/18",
+    "condition": "ttt_search",
+    "passed": false,
+    "error": "SyntaxError: unterminated triple-quoted string literal (detected at line 85) (<string>, line 80)",
+    "candidate_preview": "def how_many_times(string: str, substring: str) -> int:\n    \"\"\" Find how many times a given substring can be found in the original string. Count overlapping cases.\n    >>> how_many_times('', 'a')\n    0\n    >>> how_many_times('aaa', 'a')\n    3\n    >>> how_many_times('aaaa', 'aa')\n    3\n    \"\"\"\n    co"
+  },
+  {
+    "task_id": "HumanEval/19",
+    "condition": "ttt_search",
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"/tmp/tmpqqi6g9_o.py\", line 45, in <module>\n    check(sort_numbers)\n    ~~~~~^^^^^^^^^^^^^^\n  File \"/tmp/tmpqqi6g9_o.py\", line 38, in check\n    assert candidate('') == ''\n           ~~~~~~~~~^^^^\n  File \"/tmp/tmpqqi6g9_o.py\", line 15, in sort_numbers\n    num_map = {num: int(num) for num in valid_numbers}\n                    ~~~^^^^^\nValueError: invalid literal for int() with base 10: 'zero'",
+    "candidate_preview": "from typing import List\n\n\ndef sort_numbers(numbers: str) -> str:\n    \"\"\" Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    Return the string with numbers sorted from small"
+  }
+]

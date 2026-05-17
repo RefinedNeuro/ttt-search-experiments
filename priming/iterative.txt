@@ -1,0 +1,64 @@
+def sum_list(numbers):
+    total = 0
+    for n in numbers:
+        total += n
+    return total
+
+
+def count_even(numbers):
+    count = 0
+    for n in numbers:
+        if n % 2 == 0:
+            count += 1
+    return count
+
+
+def reverse_string(s):
+    result = ""
+    for i in range(len(s) - 1, -1, -1):
+        result += s[i]
+    return result
+
+
+def find_max(numbers):
+    if not numbers:
+        return None
+    max_val = numbers[0]
+    for n in numbers[1:]:
+        if n > max_val:
+            max_val = n
+    return max_val
+
+
+def flatten(nested):
+    result = []
+    for item in nested:
+        for x in item:
+            result.append(x)
+    return result
+
+
+def running_sum(numbers):
+    result = []
+    acc = 0
+    for n in numbers:
+        acc += n
+        result.append(acc)
+    return result
+
+
+def zip_lists(a, b):
+    result = []
+    for i in range(min(len(a), len(b))):
+        result.append((a[i], b[i]))
+    return result
+
+
+def char_frequency(s):
+    freq = {}
+    for ch in s:
+        if ch in freq:
+            freq[ch] += 1
+        else:
+            freq[ch] = 1
+    return freq

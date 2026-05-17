@@ -1,0 +1,27 @@
+TTT-Search POC — Results
+========================
+Model:          unsloth/Qwen3.5-0.8B
+Problems:       HumanEval[0:20]
+Seed:           42
+Total runtime:  57.9 minutes
+Timestamp:      2026-05-15T15:27:35.346163Z
+
+Hyperparameters:
+  LoRA r=4, target_modules=[q_proj,v_proj], lora_alpha=8, lora_dropout=0.0
+  TTT: steps=8, lr=1e-4, temperature=0.3
+  base_temperature: T=0.8, top_p=0.95, seeds=42-45
+
+Priming text SHA-256:
+  iterative.txt: bea284b0dc35b7aa121a114ae506ad3c7a9419c4128f3a503212214d6ef49047
+  recursive.txt: 64cd7c4f21dbb7094324e6dca86f3ffcd3be7b4b1af4d5ae203963d3557451bb
+  edge_cases.txt: a03de9599d9fadeaccb8ec160a2cdeb16ffae59bb0724e1388364474b61a9124
+  builtins.txt: e4f3fc97bb875c6769cffe9ff150d064d4a89be9bef022fcd36782ef977a79b7
+
+Condition                 Pass Rate    Pass Count
+--------------------------------------------------
+base_greedy               25.0%         5/20
+base_temperature          30.0%         6/20
+ttt_search                30.0%         6/20
+
+Hypothesis (ttt_search >= base_temperature + 10pp): NOT SUPPORTED
+  ttt_search=30.0%  base_temperature=30.0%  delta=+0.0pp

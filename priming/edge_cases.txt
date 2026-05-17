@@ -1,0 +1,62 @@
+def safe_divide(a, b):
+    if b == 0:
+        return None
+    return a / b
+
+
+def first_element(lst):
+    if not lst:
+        return None
+    return lst[0]
+
+
+def safe_index(lst, i):
+    if not lst:
+        return None
+    if i < 0 or i >= len(lst):
+        return None
+    return lst[i]
+
+
+def deduplicate(lst):
+    if not lst:
+        return []
+    seen = set()
+    result = []
+    for x in lst:
+        if x not in seen:
+            seen.add(x)
+            result.append(x)
+    return result
+
+
+def safe_mean(numbers):
+    if not numbers:
+        return 0.0
+    return sum(numbers) / len(numbers)
+
+
+def clamp(value, lo, hi):
+    if lo > hi:
+        lo, hi = hi, lo
+    if value < lo:
+        return lo
+    if value > hi:
+        return hi
+    return value
+
+
+def rotate_list(lst, k):
+    if not lst:
+        return []
+    n = len(lst)
+    k = k % n
+    if k == 0:
+        return lst[:]
+    return lst[-k:] + lst[:-k]
+
+
+def strip_outer(s, chars=None):
+    if not s:
+        return s
+    return s.strip(chars)

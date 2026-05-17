@@ -1,0 +1,29 @@
+TTT-Search POC v1.1 — Results
+============================
+Model:          unsloth/Qwen3.5-0.8B
+Problems:       HumanEval[0:164]
+Seed:           42
+Total runtime:  222.4 minutes
+Timestamp:      2026-05-16T18:31:57.893522Z
+
+Hyperparameters:
+  LoRA r=4, target_modules=[q_proj,v_proj], lora_alpha=8, lora_dropout=0.0
+  TTT: steps=8, lr=1e-4, AdamW
+  base_temp_lowT:   T=0.3, top_p=0.95, n=4 (seeds 42-45)
+  base_temp_highT:  T=0.8, top_p=0.95, n=4 (seeds 42-45)
+  ttt_lowT:         generation T=0.3, top_p=0.95, n=4 priming texts
+  ttt_highT:        generation T=0.8, top_p=0.95, n=4 priming texts
+
+Priming text SHA-256:
+  iterative.txt: bea284b0dc35b7aa121a114ae506ad3c7a9419c4128f3a503212214d6ef49047
+  recursive.txt: 64cd7c4f21dbb7094324e6dca86f3ffcd3be7b4b1af4d5ae203963d3557451bb
+  edge_cases.txt: a03de9599d9fadeaccb8ec160a2cdeb16ffae59bb0724e1388364474b61a9124
+  builtins.txt: e4f3fc97bb875c6769cffe9ff150d064d4a89be9bef022fcd36782ef977a79b7
+
+Condition                 Pass Rate    Pass Count
+-------------------------------------------------------
+sweep_T03                  50.0%       82/164
+sweep_T05                  59.8%       98/164
+sweep_T08                  56.1%       92/164
+sweep_T10                  59.8%       98/164
+sweep_T12                  48.8%       80/164

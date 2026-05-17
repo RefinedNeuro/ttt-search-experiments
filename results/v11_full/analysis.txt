@@ -1,0 +1,156 @@
+TTT-Search POC v1.1 — Auto-Analysis
+==================================================
+
+Total problems: 164
+Conditions: base_greedy, base_temp_lowT, base_temp_highT, ttt_lowT, ttt_highT
+
+──────────────────────────────────────────────────
+1. Per-condition pass rates
+──────────────────────────────────────────────────
+Condition                       Pass     Rate
+base_greedy                  54/164     32.9%
+base_temp_lowT               70/164     42.7%
+base_temp_highT              74/164     45.1%
+ttt_lowT                     71/164     43.3%
+ttt_highT                    76/164     46.3%
+
+──────────────────────────────────────────────────
+2. Pairwise solve-set comparison
+──────────────────────────────────────────────────
+
+  base_greedy vs base_temp_lowT:
+    Both solve:        51
+    Only base_greedy           3
+    Only base_temp_lowT       19
+    Neither:           91
+    Symmetric diff:    22
+    Union (oracle):    73  (44.5%)
+
+  base_greedy vs base_temp_highT:
+    Both solve:        49
+    Only base_greedy           5
+    Only base_temp_highT      25
+    Neither:           85
+    Symmetric diff:    30
+    Union (oracle):    79  (48.2%)
+
+  base_greedy vs ttt_lowT:
+    Both solve:        51
+    Only base_greedy           3
+    Only ttt_lowT             20
+    Neither:           90
+    Symmetric diff:    23
+    Union (oracle):    74  (45.1%)
+
+  base_greedy vs ttt_highT:
+    Both solve:        50
+    Only base_greedy           4
+    Only ttt_highT            26
+    Neither:           84
+    Symmetric diff:    30
+    Union (oracle):    80  (48.8%)
+
+  base_temp_lowT vs base_temp_highT:
+    Both solve:        60
+    Only base_temp_lowT       10
+    Only base_temp_highT      14
+    Neither:           80
+    Symmetric diff:    24
+    Union (oracle):    84  (51.2%)
+
+  base_temp_lowT vs ttt_lowT:
+    Both solve:        62
+    Only base_temp_lowT        8
+    Only ttt_lowT              9
+    Neither:           85
+    Symmetric diff:    17
+    Union (oracle):    79  (48.2%)
+
+  base_temp_lowT vs ttt_highT:
+    Both solve:        61
+    Only base_temp_lowT        9
+    Only ttt_highT            15
+    Neither:           79
+    Symmetric diff:    24
+    Union (oracle):    85  (51.8%)
+
+  base_temp_highT vs ttt_lowT:
+    Both solve:        58
+    Only base_temp_highT      16
+    Only ttt_lowT             13
+    Neither:           77
+    Symmetric diff:    29
+    Union (oracle):    87  (53.0%)
+
+  base_temp_highT vs ttt_highT:
+    Both solve:        58
+    Only base_temp_highT      16
+    Only ttt_highT            18
+    Neither:           72
+    Symmetric diff:    34
+    Union (oracle):    92  (56.1%)
+
+  ttt_lowT vs ttt_highT:
+    Both solve:        62
+    Only ttt_lowT              9
+    Only ttt_highT            14
+    Neither:           79
+    Symmetric diff:    23
+    Union (oracle):    85  (51.8%)
+
+──────────────────────────────────────────────────
+3. Oracle union — best possible if we could pick any condition per problem
+──────────────────────────────────────────────────
+Union of all 5 conditions: 100/164 (61.0%)
+
+──────────────────────────────────────────────────
+4. Diversity within each condition (mean pairwise normalized Levenshtein)
+──────────────────────────────────────────────────
+Condition                  Mean dist    All-identical problems
+base_greedy                      n/a    n/a (single candidate)
+base_temp_lowT                 0.194    16/164  all identical
+base_temp_highT                0.297     3/164  all identical
+ttt_lowT                       0.192    20/164  all identical
+ttt_highT                      0.299     5/164  all identical
+
+──────────────────────────────────────────────────
+5. Per-source-label first-pass contributions
+──────────────────────────────────────────────────
+
+  base_temp_lowT:
+    seed_42         first-pass= 52 any-pass= 52
+    seed_43         first-pass= 11 any-pass= 56
+    seed_44         first-pass=  4 any-pass= 47
+    seed_45         first-pass=  3 any-pass= 52
+
+  base_temp_highT:
+    seed_42         first-pass= 43 any-pass= 43
+    seed_43         first-pass= 12 any-pass= 36
+    seed_44         first-pass= 11 any-pass= 46
+    seed_45         first-pass=  8 any-pass= 47
+
+  ttt_lowT:
+    builtins        first-pass=  1 any-pass= 48
+    edge_cases      first-pass=  8 any-pass= 50
+    iterative       first-pass= 50 any-pass= 50
+    recursive       first-pass= 12 any-pass= 53
+
+  ttt_highT:
+    builtins        first-pass=  5 any-pass= 48
+    edge_cases      first-pass= 11 any-pass= 38
+    iterative       first-pass= 44 any-pass= 44
+    recursive       first-pass= 16 any-pass= 47
+
+──────────────────────────────────────────────────
+6. Verdict (§6 of v1.1 design doc)
+──────────────────────────────────────────────────
+
+  [Low temperature (T=0.3) — PRIMARY]
+    ttt=71, base=70, delta=+1
+    only_ttt=9, only_base=8, symmetric_diff D=17
+    → H1 + H2 HOLD: priming creates real diversity. Worth pursuing v2.
+
+  [High temperature (T=0.8) — secondary]
+    ttt=76, base=74, delta=+2
+    only_ttt=18, only_base=16, symmetric_diff D=34
+    → H1 + H2 HOLD: priming creates real diversity. Worth pursuing v2.
